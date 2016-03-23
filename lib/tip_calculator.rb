@@ -3,6 +3,8 @@ require 'json'
 require 'uri'
 require 'net/http'
 
+CURRENCIES = %w(USD, EUR, BGN).freeze
+
 module TipCalculator
   # Le Tip class to do our work
   class Tip

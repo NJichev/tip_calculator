@@ -1,24 +1,27 @@
 #!/usr/bin/env ruby
 require 'tip_calculator'
 
-# Not using a module wrapper and instance vars out in the open, wut?
-# Y U do dis...
+p TipCalculator::CURRENCIES
 if ARGV.size == 4 && '--amount'.match(ARGV[0]) && '--tip'.match(ARGV[2])
-  @amount = ARGV[1].to_f
-  @tip = ARGV[3].to_f
+  amount = ARGV[1].to_f
+  tip = ARGV[3].to_f
 else
   puts 'Enter amount: '
-  @amount = gets.to_f
+  amount_input = gets.split(' ')
+  amount = amount_input.first
+  currency = amount_input.last
+
+  throw 'Bad currency' unless TipCalculator::CURRENCIES.include? currency
 
   puts 'Enter tip percentage: '
-  @tip = gets.to_f
+  tip = gets.to_f
 end
 
-@args = {
-  'amount' => @amount,
-  'tip' => @tip
+args = {
+  'amount' => amount,
+  'tip' => tip
 }
 
-tip_total = TipCalculator::Tip.new(@args).total
+tip_total = TipCalculator::Tip.new(args).total
 
-puts "Total amount is #{tip_total}"
+puts "Total amount is #{tip_total} #{currency}"
