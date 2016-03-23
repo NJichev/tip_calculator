@@ -19,4 +19,6 @@ end
   'tip' => @tip
 }
 
-puts TipCalculator::Tip.new(@args).total
+tip_total = TipCalculator::Tip.new(@args).total
+
+puts "Total amount is #{tip_total}"
