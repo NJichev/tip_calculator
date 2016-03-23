@@ -9,7 +9,7 @@ else
   puts 'Enter amount: '
   amount_input = gets.split(' ')
   amount = amount_input.first.to_f
-  currency = amount_input.last
+  currency = amount_input[1] || ''
 
   # throw 'Bad currency' unless CURRENCIES.include? currency
 
