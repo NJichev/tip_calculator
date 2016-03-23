@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 require 'tip_calculator'
 
-p TipCalculator::CURRENCIES
+CURRENCIES = %w(USD BGN EUR)
 if ARGV.size == 4 && '--amount'.match(ARGV[0]) && '--tip'.match(ARGV[2])
   amount = ARGV[1].to_f
   tip = ARGV[3].to_f
@@ -11,7 +11,7 @@ else
   amount = amount_input.first
   currency = amount_input.last
 
-  throw 'Bad currency' unless TipCalculator::CURRENCIES.include? currency
+  throw 'Bad currency' unless CURRENCIES.include? currency
 
   puts 'Enter tip percentage: '
   tip = gets.to_f
