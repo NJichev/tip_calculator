@@ -3,8 +3,6 @@ require 'json'
 require 'uri'
 require 'net/http'
 
-CURRENCIES = %w(USD, EUR, BGN)
-
 module TipCalculator
   # Le Tip class to do our work
   class Tip
@@ -16,14 +14,17 @@ module TipCalculator
     end
 
     def total
-      puts "Response is : #{hash_response}"
       hash_response['amount_with_tip']
+    end
+
+    def amount
+      hash_response['tip']
     end
 
     private
 
     def hash_response
-      JSON.parse(response.body)
+      @hash_response ||= JSON.parse(response.body)
     end
 
     def response
