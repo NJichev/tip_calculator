@@ -22,11 +22,11 @@ Or install it yourself as:
 
 Simply writing:
 
-    $ tip_calculator
+    $ tip-calculator
 
 or:
     
-    $ tip_calculator --amount your_amount --tip your_tip
+    $ tip-calculator --amount your_amount --tip your_tip
 
 should do the trick.
 
