@@ -1,8 +1,6 @@
-# TipCalculator
+# Tip Calculator
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/tip_calculator`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Welcome to our tip calculator. You can find the instructions further down below.
 
 ## Installation
 
@@ -22,7 +20,15 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Simply writing:
+
+    $ tip_calculator
+
+or:
+    
+    $ tip_calculator --amount your_amount --tip your_tip
+
+should do the trick.
 
 ## Development
 
