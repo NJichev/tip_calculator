@@ -3,15 +3,13 @@ require 'json'
 require 'uri'
 require 'net/http'
 
-# Our code wrapper
 module TipCalculator
-  attr_reader :args
-
-  # Our tip class
+  # Le Tip class to do our work
   class Tip
+    attr_reader :args
+
     def initialize(args = {}, uri = nil)
-      @args = args
-      @args.merge(default_args)
+      @args = default_args.merge(args)
       @uri = uri
     end
 
@@ -28,7 +26,7 @@ module TipCalculator
 
     def response
       req = Net::HTTP::Post.new(uri)
-      req.set_form_data(@args)
+      req.set_form_data(args)
 
       res = Net::HTTP.start(uri.hostname, uri.port) do |http|
         http.request(req)
@@ -39,7 +37,7 @@ module TipCalculator
     def default_args
       {
         'amount' => 10.0,
-        'tip' => 15
+        'tip' => 15.0
       }
     end
 

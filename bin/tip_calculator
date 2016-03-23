@@ -1,3 +1,22 @@
 #!/usr/bin/env ruby
+require 'tip_calculator'
 
-p ARGV
+# Not using a module wrapper and instance vars out in the open, wut?
+# Y U do dis...
+if ARGV.size == 4 && '--amount'.match(ARGV[0]) && '--tip'.match(ARGV[2])
+  @amount = ARGV[1].to_f
+  @tip = ARGV[3].to_f
+else
+  puts 'Enter amount: '
+  @amount = gets.to_f
+
+  puts 'Enter tip percentage: '
+  @tip = gets.to_f
+end
+
+@args = {
+  'amount' => @amount,
+  'tip' => @tip
+}
+
+puts TipCalculator::Tip.new(@args).total
