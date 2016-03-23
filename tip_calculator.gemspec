@@ -6,12 +6,12 @@ require 'tip_calculator/version'
 Gem::Specification.new do |spec|
   spec.name          = "tip_calculator"
   spec.version       = TipCalculator::VERSION
-  spec.authors       = ["TODO: Write your name"]
+  spec.authors       = ["Nikola Jichev"]
   spec.email         = ["njichev@gmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{A little gem to calculate our tips.}
+  spec.description   = %q{This gem serves the purpose of calculating our tips for us dumb mathless developers.}
+  spec.homepage      = "https://www.github.com/njichev/coderunnes/tip_calculator"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
